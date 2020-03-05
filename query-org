@@ -1,0 +1,20 @@
+query {
+    viewer {
+      organization(login:"facebook") {
+        name,
+        registryPackages(packageType:NPM, first:100) {
+        edges {
+          node {
+            id,
+            nameWithOwner
+            name,
+            latestVersion {
+              id,
+              version,
+            }
+          }
+        }
+      }
+      }
+    }
+}
